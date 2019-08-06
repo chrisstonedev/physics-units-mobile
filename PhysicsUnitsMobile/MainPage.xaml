@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PhysicsUnitsMobile"
+             mc:Ignorable="d"
+             x:Class="PhysicsUnitsMobile.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding Formula}"
+               />
+        <Grid>
+            <Button Text="0"
+                    Command="{Binding ResetCommand}"/>
+            <Button Grid.Column="1" Text="/"
+                    Command="{Binding DivideCommand}"/>
+        </Grid>
+        <Grid>
+            <Button Text="kg"
+                    Command="{Binding KilogramCommand}"/>
+            <Button Grid.Column="1" Text="m"
+                    Command="{Binding MeterCommand}"/>
+            <Button Grid.Column="2" Text="s"
+                    Command="{Binding SecondCommand}"/>
+            <Button Grid.Column="3" Text="A"
+                    Command="{Binding AmpereCommand}"/>
+        </Grid>
+        <Grid>
+            <Button Text="C"
+                    Command="{Binding CoulombCommand}"
+                    IsEnabled="{Binding CoulombEnabled}"/>
+            <Button Grid.Column="1" Text="F"
+                    Command="{Binding FaradCommand}"
+                    IsEnabled="{Binding FaradEnabled}"/>
+            <Button Grid.Column="2" Text="H"
+                    Command="{Binding HenryCommand}"
+                    IsEnabled="{Binding HenryEnabled}"/>
+            <Button Grid.Column="3" Text="Hz"
+                    Command="{Binding HertzCommand}"
+                    IsEnabled="{Binding HertzEnabled}"/>
+            <Button Grid.Column="4" Text="J"
+                    Command="{Binding JouleCommand}"
+                    IsEnabled="{Binding JouleEnabled}"/>
+            <Button Grid.Column="5" Text="N"
+                    Command="{Binding NewtonCommand}"
+                    IsEnabled="{Binding NewtonEnabled}"/>
+        </Grid>
+        <Grid>
+            <Button Text="Pa"
+                    Command="{Binding PascalCommand}"
+                    IsEnabled="{Binding PascalEnabled}"/>
+            <Button Grid.Column="1" Text="S"
+                    Command="{Binding SiemensCommand}"
+                    IsEnabled="{Binding SiemensEnabled}"/>
+            <Button Grid.Column="2" Text="T"
+                    Command="{Binding TeslaCommand}"
+                    IsEnabled="{Binding TeslaEnabled}"/>
+            <Button Grid.Column="3" Text="V"
+                    Command="{Binding VoltCommand}"
+                    IsEnabled="{Binding VoltEnabled}"/>
+            <Button Grid.Column="4" Text="W"
+                    Command="{Binding WattCommand}"
+                    IsEnabled="{Binding WattEnabled}"/>
+            <Button Grid.Column="5" Text="Wb"
+                    Command="{Binding WeberCommand}"
+                    IsEnabled="{Binding WeberEnabled}"/>
+            <Button Grid.Column="6" Text="Ω"
+                    Command="{Binding OhmCommand}"
+                    IsEnabled="{Binding OhmEnabled}"/>
+        </Grid>
+        <Label FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding Abbreviation}"
+               />
+        <Label FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding Measurement}"
+               />
+    </StackLayout>
+
+</ContentPage>
