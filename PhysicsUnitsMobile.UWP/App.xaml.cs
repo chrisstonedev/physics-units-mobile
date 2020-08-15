@@ -1,6 +1,7 @@
 ﻿using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -10,7 +11,7 @@ namespace PhysicsUnitsMobile.UWP
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    sealed partial class App : Application, IKeyboardListener
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -58,6 +59,14 @@ namespace PhysicsUnitsMobile.UWP
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            // Custom code follows.
+            CoreWindow.GetForCurrentThread().KeyDown += HandleKeyDown;
+        }
+
+        private void HandleKeyDown(CoreWindow sender, KeyEventArgs e)
+        {
+            Xamarin.Forms.MessagingCenter.Send<IKeyboardListener, string>(this, "KeyboardListener", e.VirtualKey.ToString());
         }
 
         /// <summary>

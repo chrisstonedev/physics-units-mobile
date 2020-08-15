@@ -50,6 +50,86 @@ namespace PhysicsUnitsMobile
         private string formula;
         private string measurement;
 
+        public MainViewModel()
+        {
+            MessagingCenter.Subscribe<IKeyboardListener, string>(this, "KeyboardListener", (sender, e) =>
+            {
+                switch (e)
+                {
+                    case "Number0":
+                        ResetAction();
+                        break;
+                    case "A":
+                        AmpereAction();
+                        break;
+                    case "B":
+                        if (WeberEnabled)
+                            WeberAction();
+                        break;
+                    case "C":
+                        if (CoulombEnabled)
+                            CoulombAction();
+                        break;
+                    case "F":
+                        if (FaradEnabled)
+                            FaradAction();
+                        break;
+                    case "G":
+                        if (SiemensEnabled)
+                            SiemensAction();
+                        break;
+                    case "H":
+                        if (HenryEnabled)
+                            HenryAction();
+                        break;
+                    case "J":
+                        if (JouleEnabled)
+                            JouleAction();
+                        break;
+                    case "K":
+                        KilogramAction();
+                        break;
+                    case "M":
+                        MeterAction();
+                        break;
+                    case "N":
+                        if (NewtonEnabled)
+                            NewtonAction();
+                        break;
+                    case "O":
+                        if (OhmEnabled)
+                            OhmAction();
+                        break;
+                    case "P":
+                        if (PascalEnabled)
+                            PascalAction();
+                        break;
+                    case "S":
+                        SecondAction();
+                        break;
+                    case "T":
+                        if (TeslaEnabled)
+                            TeslaAction();
+                        break;
+                    case "V":
+                        if (VoltEnabled)
+                            VoltAction();
+                        break;
+                    case "W":
+                        if (WattEnabled)
+                            WattAction();
+                        break;
+                    case "Z":
+                        if (HertzEnabled)
+                            HertzAction();
+                        break;
+                    case "191":
+                        DivideAction();
+                        break;
+                }
+            });
+        }
+
         public string Abbreviation
         {
             get => abbreviation;
