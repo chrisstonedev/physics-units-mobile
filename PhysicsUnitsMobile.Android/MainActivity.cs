@@ -7,7 +7,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace PhysicsUnitsMobile.Droid
 {
-    [Activity(Label = "PhysicsUnitsMobile", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Physics", Icon = "@mipmap/icon", RoundIcon = "@mipmap/icon_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity, IKeyboardListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
